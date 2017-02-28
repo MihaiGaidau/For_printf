@@ -3,6 +3,7 @@ NAME = libftprintf.a
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror -Ilibft -Iinc/
 SRCDIR	=	funct
+OBJDIR	=	obj
 SRC		=	src
 _SRC	=	check_color.c \
 			ft_add_minus.c \
@@ -49,22 +50,24 @@ OBJ		=	$(addprefix $(OBJDIR)/, $(_OBJ))
 LIBFT	=	./libft/libft.a
 RM		=	rm -f
 
-all: $(NAME)
+all: $(OBJDIR) $(NAME)
+
+$(OBJDIR):
+	@mkdir $(OBJDIR)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	gcc $(CFLAGS) -c -o $@ $<
+	@gcc $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJ)
-	make -C ./libft
-	ar -rcT $(NAME) $(LIBFT) $?
- 	# libtool -static -o $(NAME) $(LIBFT) $?
-
+	@make -C ./libft
+	@ar -rcs $(LIBFT) $?
+	@mv $(LIBFT) $(NAME)
 clean:
-	$(RM) $(OBJ)
-	make clean -C ./libft
+	@$(RM) $(OBJ)
+	@make clean -C ./libft
 
 fclean: clean
-	$(RM) $(NAME)
-	make fclean -C ./libft
+	@$(RM) $(NAME)
+	@make fclean -C ./libft
 
 re: fclean all
