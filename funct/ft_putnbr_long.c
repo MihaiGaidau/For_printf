@@ -6,6 +6,7 @@ char    *ft_putnbr_long(long long int n)
     char                *s;
     int                 h;
 
+    h = 0;
     s = (char*)malloc(sizeof(char) * 100);
     if (n == 0)
     {

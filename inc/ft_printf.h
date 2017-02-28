@@ -4,6 +4,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft.h"
+#include <stdio.h>
 
 # define MAX_UNS_INT    4294967295
 # define RED            "\x1b[31m"

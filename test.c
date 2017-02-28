@@ -3,12 +3,13 @@
 int main(void)
 {  
     
-    printf("%p\n",(void*)-42);
-    ft_printf(RED"misa vrea acasa%#{magenta}p\n",(void*)-42);
+    // printf("%p\n",(void*)-42);
+    // ft_printf(RED"misa vrea acasa%#{magenta}p\n",(void*)-42);
     // ft_printf("%p\n",*q); 
     // ft_printf("%+05{red}d\n",20);
-
-    // ft_printf("mihai bea%+05{red}d%{yellow}*s ",20,10, "grisa");
+    // printf("%%");
+    ft_printf("%misa%%vasea\n");
+    ft_printf("mihai bea%+05{red}d%{yellow}*s ",20,10, "grisa");
     //printf("\n%x",-2);
     //   char *g;
     //    g=(char*)malloc(sizeof(char)*45);
