@@ -12,11 +12,13 @@ int     ft_put_first(char c, int g5, int *i, char z)
         if (g5 == 1)
         {
             ft_putchr('+');
+            g_len++;
             q--;
         }
         else if (z == '-') 
         {
             ft_putchr('-');
+            g_len++;
             index = 1;
         }
     }

@@ -3,7 +3,6 @@
 #define ST va_list ap; int i = -1; char *flags_data, *var_afis;
 
 int g_flags[20];
-int g_len;
 
 void    zero()
 {
@@ -68,7 +67,8 @@ int     ft_printf(const char *format, ...)
         zero();
         if (format[i] == '%')
         {
-            flags_data = ft_get_flags_data(&format[i + 1], "sSpdDioOuUxXcCb\0");
+            flags_data = ft_get_flags_data(&format[i + 1], "%sSpdDioOuUxXcCb\0");
+            // puts(flags_data);
             i += ft_strlen(flags_data);
             ft_fill(flags_data, g_flags);
             g_flags[3] = (g_flags[3] == 1 ? va_arg(ap , int) : 0);
@@ -77,10 +77,13 @@ int     ft_printf(const char *format, ...)
             var_afis = num_to_base(va_arg(ap, void *), flags_data, g_flags[2]);
             g_len += ft_strlen(var_afis);
         }
-        else ft_putchr(format[i]);
+        else 
+        {
+            ft_putchr(format[i]);
+            g_len++;
+        }
         if (format[i] == '\0')
             return (g_len);
-        g_len++;
     }
     va_end(ap);
     return(g_len);

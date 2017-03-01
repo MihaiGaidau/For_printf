@@ -4,12 +4,18 @@ int main(void)
 {  
     
     // printf("%p\n",(void*)-42);
+    // printf("%x\n", 0);
+    ft_printf("%x\n", 0);
     // ft_printf(RED"misa vrea acasa%#{magenta}p\n",(void*)-42);
     // ft_printf("%p\n",*q); 
     // ft_printf("%+05{red}d\n",20);
     // printf("%%");
-    ft_printf("%misa%%vasea\n");
-    ft_printf("mihai bea%+05{red}d%{yellow}*s ",20,10, "grisa");
+    // ft_printf("%misa%%vasea\n");
+    // ft_printf("%-5%\n");
+    // printf("%10%");
+    // char *s="%";
+    // printf("%s",s);
+    // ft_printf("mihai bea%+05{red}d%{yellow}*s ",20,10, "grisa");
     //printf("\n%x",-2);
     //   char *g;
     //    g=(char*)malloc(sizeof(char)*45);

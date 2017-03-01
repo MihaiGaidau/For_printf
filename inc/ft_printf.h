@@ -44,6 +44,8 @@
 # define BG_WHITE "\x1B[47m"
 # define BG_DEFAULT "\x1B[49m"
 
+int g_len;
+
 void    ft_putchr(char c);
 int     ft_Red(char *s);
 int     ft_Green(char *s);

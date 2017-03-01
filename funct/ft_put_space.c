@@ -8,6 +8,7 @@ void ft_put_space(int g6, char c, int *i)
     if (g6 != 0 && c != '-')
     {
         ft_putchr(' ');
+        g_len++;
         q--;
     }
     *i = q;
