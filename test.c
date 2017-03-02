@@ -4,8 +4,9 @@ int main(void)
 {  
     
     // printf("%p\n",(void*)-42);
-    // printf("%x\n", 0);
-    ft_printf("%x\n", 0);
+    ft_printf("%x\n",4294967296);
+    printf("%x\n",4294967296);
+    // ft_printf("%    %\n");
     // ft_printf(RED"misa vrea acasa%#{magenta}p\n",(void*)-42);
     // ft_printf("%p\n",*q); 
     // ft_printf("%+05{red}d\n",20);

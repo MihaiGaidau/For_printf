@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void    ft_fill(char *s,int *a)
+void    ft_fill(char *s, int *a)
 {
     int i;
     

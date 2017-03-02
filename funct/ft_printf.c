@@ -68,13 +68,19 @@ int     ft_printf(const char *format, ...)
         if (format[i] == '%')
         {
             flags_data = ft_get_flags_data(&format[i + 1], "%sSpdDioOuUxXcCb\0");
-            // puts(flags_data);
             i += ft_strlen(flags_data);
             ft_fill(flags_data, g_flags);
             g_flags[3] = (g_flags[3] == 1 ? va_arg(ap , int) : 0);
             if (error())
                 return (0);
-            var_afis = num_to_base(va_arg(ap, void *), flags_data, g_flags[2]);
+            if (flags_data[ft_strlen(flags_data) - 1] == '%')
+            {
+                var_afis = "%";
+                if (g_flags[6])
+                    g_flags[6] = 0;
+                put_precision(var_afis,flags_data);
+            } else
+                var_afis = num_to_base(va_arg(ap, void *), flags_data, g_flags[2]);
             g_len += ft_strlen(var_afis);
         }
         else 
