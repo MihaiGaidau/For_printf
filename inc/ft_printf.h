@@ -45,6 +45,7 @@
 # define BG_DEFAULT "\x1B[49m"
 
 int g_len;
+int g_flags[20];
 
 void    ft_putchr(char c);
 int     ft_Red(char *s);

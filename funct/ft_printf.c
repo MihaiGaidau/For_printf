@@ -2,7 +2,7 @@
 
 #define ST va_list ap; int i = -1; char *flags_data, *var_afis;
 
-int g_flags[20];
+
 
 void    zero()
 {
@@ -16,20 +16,20 @@ void    zero()
     }
 }
 
-int     error()
-{
-    if (g_flags[4] == 1 && g_flags[7] == 1)
-    {
-        ft_putstr("ERROR!!!");
-        return(1);
-    }
-    if (g_flags[2] == 1 && g_flags[3] == 1)
-    {
-        ft_putstr("ERROR!!!");
-        return(1);
-    }
-    return(0);
-}
+// int     error()
+// {
+//     if (g_flags[4] == 1 && g_flags[7] == 1)
+//     {
+//         ft_putstr("ERROR!!!");
+//         return(1);
+//     }
+//     if (g_flags[2] == 1 && g_flags[3] == 1)
+//     {
+//         ft_putstr("ERROR!!!");
+//         return(1);
+//     }
+//     return(0);
+// }
 
 void    put_precision(char *s, char *q)
 {
@@ -71,8 +71,10 @@ int     ft_printf(const char *format, ...)
             i += ft_strlen(flags_data);
             ft_fill(flags_data, g_flags);
             g_flags[3] = (g_flags[3] == 1 ? va_arg(ap , int) : 0);
-            if (error())
-                return (0);
+            if (ft_strstr(flags_data, "lx") || ft_strstr(flags_data, "jx") || ft_strstr(flags_data, "lX"))
+                g_flags[8] = 1; 
+            // if (error())
+            //     return (0);
             if (flags_data[ft_strlen(flags_data) - 1] == '%')
             {
                 var_afis = "%";
